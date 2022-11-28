@@ -8,16 +8,16 @@ module aramsey118_freq_counter #(
 );
 
     // Precalculate the boundaries
-    localparam unsigned freq_0 = $ceil(DEPTH * 0.0); // not used, here for completeness
-    localparam unsigned freq_1 = $ceil(DEPTH * 0.1);
-    localparam unsigned freq_2 = $ceil(DEPTH * 0.2);
-    localparam unsigned freq_3 = $ceil(DEPTH * 0.3);
-    localparam unsigned freq_4 = $ceil(DEPTH * 0.4);
-    localparam unsigned freq_5 = $ceil(DEPTH * 0.5);
-    localparam unsigned freq_6 = $ceil(DEPTH * 0.6);
-    localparam unsigned freq_7 = $ceil(DEPTH * 0.7);
-    localparam unsigned freq_8 = $ceil(DEPTH * 0.8);
-    localparam unsigned freq_9 = $ceil(DEPTH * 0.9);
+    localparam integer freq_0 = $ceil(DEPTH * 0.0); // not used, here for completeness
+    localparam integer freq_1 = $ceil(DEPTH * 0.1);
+    localparam integer freq_2 = $ceil(DEPTH * 0.2);
+    localparam integer freq_3 = $ceil(DEPTH * 0.3);
+    localparam integer freq_4 = $ceil(DEPTH * 0.4);
+    localparam integer freq_5 = $ceil(DEPTH * 0.5);
+    localparam integer freq_6 = $ceil(DEPTH * 0.6);
+    localparam integer freq_7 = $ceil(DEPTH * 0.7);
+    localparam integer freq_8 = $ceil(DEPTH * 0.8);
+    localparam integer freq_9 = $ceil(DEPTH * 0.9);
 
     wire clk = io_in[0];
     wire reset = io_in[1];
@@ -41,23 +41,23 @@ module aramsey118_freq_counter #(
         end else begin
             sig_d1 <= sig;
             diff <= (sig ^ sig_d1);
-            if ((avg <= freq_1)) begin
+            if ((avg <= $unsigned(freq_1))) begin
                 digit <= 0;
-            end else if ((avg > freq_1) && (avg <= freq_2)) begin
+            end else if ((avg > $unsigned(freq_1)) && (avg <= $unsigned(freq_2))) begin
                 digit <= 1;
-            end else if ((avg > freq_2) && (avg <= freq_3)) begin
+            end else if ((avg > $unsigned(freq_2)) && (avg <= $unsigned(freq_3))) begin
                 digit <= 2;
-            end else if ((avg > freq_3) && (avg <= freq_4)) begin
+            end else if ((avg > $unsigned(freq_3)) && (avg <= $unsigned(freq_4))) begin
                 digit <= 3;
-            end else if ((avg > freq_4) && (avg <= freq_5)) begin
+            end else if ((avg > $unsigned(freq_4)) && (avg <= $unsigned(freq_5))) begin
                 digit <= 4;
-            end else if ((avg > freq_5) && (avg <= freq_6)) begin
+            end else if ((avg > $unsigned(freq_5)) && (avg <= $unsigned(freq_6))) begin
                 digit <= 5;
-            end else if ((avg > freq_6) && (avg <= freq_7)) begin
+            end else if ((avg > $unsigned(freq_6)) && (avg <= $unsigned(freq_7))) begin
                 digit <= 6;
-            end else if ((avg > freq_7) && (avg <= freq_8)) begin
+            end else if ((avg > $unsigned(freq_7)) && (avg <= $unsigned(freq_8))) begin
                 digit <= 7;
-            end else if ((avg > freq_8) && (avg <= freq_9)) begin
+            end else if ((avg > $unsigned(freq_8)) && (avg <= $unsigned(freq_9))) begin
                 digit <= 8;
             end else begin
                 digit <= 9;
