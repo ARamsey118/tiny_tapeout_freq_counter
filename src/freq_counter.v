@@ -1,7 +1,7 @@
 `default_nettype none
 
 module aramsey118_freq_counter #(
-    parameter DEPTH = 250
+    parameter DEPTH = 200
 ) (
   input [7:0] io_in,
   output [7:0] io_out
