@@ -4,7 +4,7 @@ module shift_reg #(
   input wire data_i,
   input wire reset,
   input wire clk,
-  output reg data_o
+  output wire data_o
 );
 
     reg [DEPTH-1:0] register;
