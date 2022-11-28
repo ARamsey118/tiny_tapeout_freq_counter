@@ -50,8 +50,8 @@ set ::env(CLOCK_PERIOD) "100000"
 set ::env(CLOCK_PORT) {io_in[0]}
 
 # hold/slack margin
-# set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.8 
-# set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) 0.8 
+# set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.8
+# set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) 0.8
 
 # don't use power rings or met5
 set ::env(DESIGN_IS_CORE) 0
@@ -60,3 +60,5 @@ set ::env(RT_MAX_LAYER) {met4}
 # connect to first digital rails
 set ::env(VDD_NETS) [list {vccd1}]
 set ::env(GND_NETS) [list {vssd1}]
+
+set ::env(GLB_RT_ALLOW_CONGESTION) "1"
