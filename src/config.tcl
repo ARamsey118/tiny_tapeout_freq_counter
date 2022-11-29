@@ -62,3 +62,4 @@ set ::env(VDD_NETS) [list {vccd1}]
 set ::env(GND_NETS) [list {vssd1}]
 
 #set ::env(GLB_RT_ALLOW_CONGESTION) "1"
+set ::env(RUN_CVC) 0
